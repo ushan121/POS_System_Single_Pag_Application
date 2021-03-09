@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS_System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assests/css/bootstrap.min.css">
+</head>
+<body >
+<script src="assests/js/bootstrap.js"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
+        <a class="navbar-brand font fw-bold fs-3 text-danger" href="#">POS System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav fw-bold">
+                <a id="btnHome" class="nav-link "href="#">Home</a>
+                <a id="btnCustomer" class="nav-link" href="#">Customer</a>
+                <a id="btnItem" class="nav-link" href="#">Item</a>
+                <a id="btnOrder" class="nav-link" href="#">Order</a>
+            </div>
+        </div>
+    </div>
+    <span class="btn">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">+New Customer</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="text-center" id="exampleModalLabel">New Customer</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <div class="form-floating p-2">
+                                <input type="customer id" class="form-control" id="cID" placeholder="id@example.com">
+                                <label for="customerID">Customer Id</label>
+                            </div>
+                            <div class="form-floating p-2">
+                                <input type="customer name" class="form-control" id="cName" placeholder="name@example.com">
+                                <label for="customerName">Customer Name</label>
+                            </div>
+                            <div class="form-floating p-2">
+                                <input type="customer address" class="form-control" id="cAddress" placeholder="address@example.com">
+                                <label for="customerAddress">Customer Address</label>
+                            </div>
+                            <div class="form-floating p-2">
+                                <input type="customer salary" class="form-control" id="cSalary" placeholder="Salary@example.com">
+                                <label for="customerSalary">Customer Salary</label>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Customer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </span>
+    <span class="btn">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">+New Item</button>
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="text-center" id="exampleModalLabel1">New Item</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <div class="form-floating p-2">
+                                <input type="item code" class="form-control" id="itemCode" placeholder="code@example.com">
+                                <label for="itemCode">Item Code</label>
+                            </div>
+                            <div class="form-floating p-2">
+                                <input type="item name" class="form-control" id="itemName" placeholder="name@example.com">
+                                <label for="itemName">Item Name</label>
+                            </div>
+                            <div class="form-floating p-2">
+                                <input type="qty" class="form-control" id="qty" placeholder="qty@example.com">
+                                <label for="qty">QTY</label>
+                            </div>
+                            <div class="form-floating p-2">
+                                <input type="unit price" class="form-control" id="unitPrice" placeholder="UnitPrice@example.com">
+                                <label for="unitPrice">Unit Price</label>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </span>
+</nav>
+
+<div id="Home">
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assests/img/depositphotos_158349196-stock-photo-point-of-sale-system-for.jpg" height="603px" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="assests/img/w4NWFe.jpg" height="603px" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="assests/img/notebook-1280538_1920.jpg" height="603px" class="d-block w-100" alt="...">
+            </div>
+            <a style="position: absolute;left: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto" class="nav-link" href="#">
+                <button id="btnGetStared" class="btn btn-success" type="button"  style="position: absolute;right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;width: 200px;height: 80px;z-index: 1" > Get Stared</button>
+                <div style="width: 200px;
+            height: 80px;
+            border: 3px solid #146c43;
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            animation-name: chanagesize;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            z-index: 0;
+"></div>
+            </a>
+        </div>
+        <button style="opacity: 0" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button style="opacity: 0" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span  class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+</div>
+
+<div id="Item">
+
+    <section class="container-fluid">
+        <section class="row px-2 ">
+            <div class=" col">
+                <div class="form-floating p-2">
+                    <input type="Item Code" class="form-control" id="txtitemCode" placeholder="code@example.com">
+                    <label for="txtitemCode">Item Code</label>
+                </div>
+                <div class="form-floating p-2">
+                    <input type="item name" class="form-control" id="txtitemName" placeholder="name@example.com">
+                    <label for="txtitemName">Item Name</label>
+                </div>
+                <div class="form-floating p-2">
+                    <input type="Qty" class="form-control" id="txtQty" placeholder="qty@example.com">
+                    <label for="txtQty">Qty</label>
+                </div>
+                <div class="form-floating p-2">
+                    <input type="unit price" class="form-control" id="txtunitPrice" placeholder="unitprice@example.com">
+                    <label for="txtunitPrice">Unit Price</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="col p-2">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-warning me-md-2 p-2" type="button">Search</button>
+                <button class="btn btn-info" type="button">Update</button>
+                <button type="button" class="btn btn-danger" type="button">Delete</button>
+            </div>
+        </section>
+
+        <table class="table table-bordered table-hover shadow-sm">
+            <thead class="bg-primary text-white">
+            <th>Item Code</th>
+            <th>Item Name</th>
+            <th>Qty</th>
+            <th>Unit Price</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>I001</td>
+                <td>Oill</td>
+                <td>20</td>
+                <td>Rs.500</td>
+            </tr>
+
+            <tr>
+                <td>I002</td>
+                <td>Tire</td>
+                <td>05</td>
+                <td>Rs.15000</td>
+            </tr>
+
+            <tr>
+                <td>I003</td>
+                <td>Break Cable</td>
+                <td>50</td>
+                <td>Rs.800</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </section>
+
+</div>
+
+<div id="Customer">
+
+    <section class="container-fluid">
+        <section class="row px-2 ">
+            <div class=" col">
+                <div class="form-floating p-2">
+                    <input type="customer id" class="form-control" id="customerID" placeholder="id@example.com">
+                    <label for="customerID">Customer Id</label>
+                </div>
+                <div class="form-floating p-2">
+                    <input type="customer name" class="form-control" id="customerName" placeholder="name@example.com">
+                    <label for="customerName">Customer Name</label>
+                </div>
+                <div class="form-floating p-2">
+                    <input type="customer address" class="form-control" id="customerAddress" placeholder="address@example.com">
+                    <label for="customerAddress">Customer Address</label>
+                </div>
+                <div class="form-floating p-2">
+                    <input type="customer salary" class="form-control" id="customerSalary" placeholder="salary@example.com">
+                    <label for="customerSalary">Customer Salary</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="col p-2">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-warning me-md-2 p-2" type="button">Search</button>
+                <button class="btn btn-info" type="button">Update</button>
+                <button type="button" class="btn btn-danger" type="button">Delete</button>
+            </div>
+        </section>
+
+        <table class="table table-bordered table-hover shadow-sm">
+            <thead class="bg-primary text-white">
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Customer Address</th>
+            <th>Customer Salary</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>C001</td>
+                <td>Kamal</td>
+                <td>Matara</td>
+                <td>100000</td>
+            </tr>
+            <tr>
+                <td>C002</td>
+                <td>Nimal</td>
+                <td>Galle</td>
+                <td>50000</td>
+            </tr>
+            <tr>
+                <td>C003</td>
+                <td>Sunil</td>
+                <td>Colombo</td>
+                <td>75000</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</div>
+
+<div id="Order">
+
+    <form class="row mx-4 mb-5">
+        <div class="col-auto g-3">
+            <label for="inputOrderId" class="visually-hidden">Order Id</label>
+            <input type="orderId" class="form-control" id="inputOrderId" placeholder="Order Id">
+        </div>
+    </form >
+
+    <form class="row mx-3">
+
+        <section class="row mb-5">
+            <section class="col-3">
+                <select class="form-select" aria-label="Default select customer">
+                    <option selected>Select Customer</option>
+                    <option value="1">C001</option>
+                    <option value="2">C002</option>
+                    <option value="3">C003</option>
+                </select>
+            </section>
+            <div class="col-auto ">
+                <label for="inputCustomerName" class="visually-hidden">Customer Name</label>
+                <input type="customer Name" class="form-control" id="inputCustomerName" placeholder="Customer Name">
+            </div>
+        </section>
+
+        <section class="row">
+            <section class="col-3 ">
+                <select class="form-select " aria-label="Default select item">
+                    <option selected>Select Item</option>
+                    <option value="1">I001</option>
+                    <option value="2">I002</option>
+                    <option value="3">I003</option>
+                </select>
+            </section>
+            <div class="col-auto">
+                <label for="inputItemName" class="visually-hidden">Item Name</label>
+                <input type="Item Name" class="form-control" id="inputItemName" placeholder="Item Name">
+            </div>
+
+            <div class="col-auto">
+                <label for="inputItemUnitPrice" class="visually-hidden">Unit Price</label>
+                <input type="Unit Price" class="form-control" id="inputItemUnitPrice" placeholder="Unit Price">
+            </div>
+            <section class="col-1 ">
+                <div class="col-auto ">
+                    <label for="inputQty" class="visually-hidden">Item Name</label>
+                    <input type="Qty" class="form-control btn-outline-danger" id="inputQty" placeholder="QTY">
+                </div>
+            </section>
+        </section>
+
+    </form>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3 mb-2 mx-3">
+        <button class="btn btn-warning me-md-2" type="button">Add</button>
+        <button class="btn btn-info" type="button">Remove</button>
+    </div>
+
+    <table class="table table-bordered table-hover shadow-sm ">
+        <thead class="bg-primary text-white">
+        <th>Order ID</th>
+        <th>Customer ID</th>
+        <th>Customer Name</th>
+        <th>Item Code</th>
+        <th>Item Name</th>
+        <th>Unit Price</th>
+        <th>qty</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>O001</td>
+            <td>C001</td>
+            <td>Kamal</td>
+            <td>I001</td>
+            <td>Oill</td>
+            <td>Rs.500.00</td>
+            <td>02</td>
+        </tr>
+        <tr>
+            <td>O002</td>
+            <td>C002</td>
+            <td>Nimal</td>
+            <td>I002</td>
+            <td>Tire</td>
+            <td>Rs.15000.00</td>
+            <td>01</td>
+        </tr>
+        <tr>
+            <td>O003</td>
+            <td>C003</td>
+            <td>Sunil</td>
+            <td>I003</td>
+            <td>Break Cable</td>
+            <td>Rs.800.00</td>
+            <td>01</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <div class="badge bg-primary text-wrap p-3" style="width: 8rem;">
+        Total :
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2 mx-2">
+        <button class="btn btn-success me-md-2 p-3" type="button">Place Order</button>
+    </div>
+
+
+</div>
+
+
+<script>
+
+    var Home = document.getElementById("Home");
+
+
+    var Item = document.getElementById("Item");
+    Item.style.display='none';
+
+    var Customer = document.getElementById("Customer");
+    Customer.style.display='none';
+
+    var Order = document.getElementById("Order");
+    Order.style.display='none';
+
+
+    var btnHome = document.getElementById("btnHome");
+    btnHome.addEventListener('click',function () {
+        Home.style.display='block';
+        Item.style.display = 'none';
+    });
+
+    var btnItem = document.getElementById("btnItem");
+    btnItem.addEventListener('click',function () {
+        Home.style.display = 'none';
+        Item.style.display = 'block';
+    });
+
+    var btnCustomer = document.getElementById("btnCustomer");
+    btnCustomer.addEventListener('click',function () {
+        Home.style.display = 'none';
+        Item.style.display = 'none';
+        Customer.style.display = 'block';
+    });
+
+    var btnGetStared = document.getElementById("btnGetStared");
+    btnGetStared.addEventListener('click',function () {
+        Home.style.display='none';
+        Customer.style.display= 'block';
+        Item.style.display = 'none';
+    });
+
+    var btnOrder = document.getElementById("btnOrder");
+    btnOrder.addEventListener('click',function () {
+        Home.style.display='none';
+        Customer.style.display= 'none';
+        Item.style.display = 'none';
+        Order.style.display = 'block';
+    })
+
+</script>
+
+
+</body>
+</html>
